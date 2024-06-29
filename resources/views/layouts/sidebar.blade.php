@@ -36,7 +36,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('account.categories')}}"
+                            <a href="{{route('account.category')}}"
                                 class="nav-link  ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>category</p>

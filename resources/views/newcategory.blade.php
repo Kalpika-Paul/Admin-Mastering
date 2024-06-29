@@ -29,7 +29,7 @@
 				</ul>
 				<div class="navbar-nav pl-2">
 					<ol class="breadcrumb p-0 m-0 bg-white">
-						<li class="breadcrumb-item"><a href="categories.html">Add Category</a></li>
+						<li class="breadcrumb-item"><a href="">Add Category</a></li>
 						<li class="breadcrumb-item active">List</li>
 					</ol>
 				</div>
@@ -86,37 +86,39 @@
 					<div class="container">
                      
                         <p>Please Fillup The form </p> 
-                        {{-- <code>.needs-validation</code> --}}
                         
-                        <form action="/action_page.php" class="needs-validation" novalidate>
-                          <div class="form-group">
-                            <label for="uname">Showroom Name:</label>
-                            <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-                            <div class="valid-feedback">Valid.</div>
+                        
+                        <form method = "post" action = "{{route('account.store')}}" >
+                            @csrf
+							@method('post')
+							<div class="form-group">
+                            <label for="name">Showroom Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Showroom Name" name="name" >
+                           
                             <div class="invalid-feedback">Please fill out this field.</div>
                           </div>
                           <div class="form-group">
-                            <label for="pwd">Showroom Address </label>
-                            <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="address" required>
-                            <div class="valid-feedback">Valid.</div>
+                            <label for="address">Showroom Address </label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter Showroom address" name="address" >
+                            
                             <div class="invalid-feedback">Please fill out this field.</div>
                           </div>
                           <div class="form-group">
-                            <label for="uname">Phone:</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Enter username" name="phone" required>
-                            <div class="valid-feedback">Valid.</div>
+                            <label for="phone">Phone:</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone" >
+                           
                             <div class="invalid-feedback">Please fill out this field.</div>
                           </div>
                           <div class="form-group">
-                            <label for="uname">Email:</label>
-                            <input type="text" class="form-control" id="email" placeholder="Enter username" name="email" required>
-                            <div class="valid-feedback">Valid.</div>
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" >
+                           
                             <div class="invalid-feedback">Please fill out this field.</div>
                           </div>
                           <div class="form-group">
-                            <label for="uname">Area:</label>
-                            <input type="text" class="form-control" id="area" placeholder="Enter username" name="area" required>
-                            <div class="valid-feedback">Valid.</div>
+                            <label for="area">Area:</label>
+                            <input type="text" class="form-control" id="area" placeholder="Enter area" name="area" >
+                            
                             <div class="invalid-feedback">Please fill out this field.</div>
                           </div>
                           
@@ -124,14 +126,14 @@
                         </form>
                       </div>
                       
-                      <script>
-                      // Disable form submissions if there are invalid fields
+                      {{-- <script>
+
                       (function() {
                         'use strict';
                         window.addEventListener('load', function() {
-                          // Get the forms we want to add validation styles to
+                         
                           var forms = document.getElementsByClassName('needs-validation');
-                          // Loop over them and prevent submission
+                          
                           var validation = Array.prototype.filter.call(forms, function(form) {
                             form.addEventListener('submit', function(event) {
                               if (form.checkValidity() === false) {
@@ -144,7 +146,7 @@
                         }, false);
                       })();
                       </script>
-                      
+                       --}}
 					
 					<!-- /.card -->
 				</section>
