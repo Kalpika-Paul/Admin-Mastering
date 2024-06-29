@@ -20,5 +20,5 @@ Route::get ('/account/dashboard', [DashboardController::class,'index'])->name('a
 Route::get('/account/register', [LoginController::class,'register'])->name('account.register');
 
 Route::get('/account/categories', [DashboardController::class,'categories'])->name('account.categories');
-
+Route::get('/account/newcategory', [DashboardController::class,'newcategory'])->name('account.newcategory');
 

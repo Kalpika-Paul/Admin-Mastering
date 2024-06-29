@@ -15,6 +15,10 @@ class DashboardController extends Controller
         return view ('categories');
     }
 
+    public function newcategory (){
+        return view ('newcategory');
+    }
+
 
 
 }
