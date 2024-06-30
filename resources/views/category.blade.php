@@ -109,7 +109,22 @@
 											<th width="100">Edit</th>
 											<th width="100">Delete</th>
 										</tr>
+
+										@foreach ($category as $category)
+											<tr>
+												<td>{{$category->id}}</td>
+												<td>{{$category->name}}</td>
+												<td>{{$category->address}}</td>
+												<td>{{$category->phone}}</td>
+												<td>{{$category->email}}</td>
+												<td>{{$category->area}}</td>
+												
+													
+												
+											</tr>
+										@endforeach
 									</thead>
+									
 									<tbody>
 										
 											

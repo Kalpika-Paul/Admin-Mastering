@@ -12,7 +12,12 @@ class DashboardController extends Controller
     }
 
     public function category(){
-        return view ('category');
+
+        // dd( Category::all());
+       
+            $category = Category::all();
+            return view('category', ['category' => $category]);
+        
     }
 
     public function newcategory (){
@@ -21,7 +26,7 @@ class DashboardController extends Controller
    
     public function store (Request $request)
     {
-        // dd($request->name);
+        // dd($request);
 
         $data = $request->validate([
            
@@ -37,9 +42,13 @@ class DashboardController extends Controller
 
          $newCategory = Category::create($data);
      
-         if ($newCategory) {
-        return redirect(route('account.dashboard'))->with('success', 'Category created successfully');
-    }   else {
+         if ($newCategory) 
+    {
+
+        return redirect(route('account.category'))->with('success', 'Category created successfully');
+    }  
+    
+    else {
         return redirect()->back()->with('error', 'Failed to create category');
     }
        
